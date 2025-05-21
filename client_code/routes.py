@@ -19,7 +19,7 @@ class AccountRoute(AutoLoad):
     path = "/account"
     form = "Pages.Account"
     strict = False
-    fields = ["first_load", "the answer to life", "name"]
+    fields = ["first_load", "the answer to life", "name", "email"]
 
 
 class PrivateIdRoute(AutoLoad):
