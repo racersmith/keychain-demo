@@ -10,7 +10,7 @@ dependencies:
   version: {version_tag: v0.3.5}
 - dep_id: dep_qmfpo8g8ozffw
   resolution_hints: {app_id: UESVUJKDGQULTT5M, name: routing data, package_name: routing_data}
-  version: {branch: master}
+  version: {branch: develop}
 metadata: {description: Play with methods to reduce server calls when navigating}
 name: routing data demo
 native_deps: null
