@@ -1,7 +1,7 @@
 from ._anvil_designer import cache_displayTemplate
 
 from routing.router import _cached
-from ...data_finder.auto_load import _GLOBAL_CACHE, _GLOBAL_KEYS
+from routing_data.data_finder.auto_load import _GLOBAL_CACHE, _GLOBAL_KEYS
 
 import json
 
