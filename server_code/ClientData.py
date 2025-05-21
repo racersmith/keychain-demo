@@ -1,4 +1,4 @@
-from .DataFinder import register_data_request, Flatten
+from routing_data.DataFinder import register_data_request, Flatten
 
 import time
 

@@ -1,6 +1,5 @@
 from routing.router import Route, Redirect
-
-from .data_finder import AutoLoad, find_global_fields
+from routing_data.data_finder import AutoLoad, find_global_fields
 
 
 class RootRoute(Route):
