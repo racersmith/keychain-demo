@@ -16,6 +16,10 @@ components_by_slot:
     properties: {icon: 'mi:privacy_tip', path: /private, text: Private}
     type: form:dep_q2wel7ztf6yfx:router.NavLink
   - layout_properties: {}
+    name: nav_link_5
+    properties: {icon: 'mi:auto_awesome_motion', path: /option, text: Options}
+    type: form:dep_capuawajr8465t:router.NavLink
+  - layout_properties: {}
     name: nav_link_4
     properties: {icon: 'mi:lock', path: /protected, text: Protected}
     type: form:dep_capuawajr8465t:router.NavLink
