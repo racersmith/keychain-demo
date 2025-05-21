@@ -47,13 +47,7 @@ def get_private_data(*args, **loader_args):
     return "Private Data from server"
 
 
-@register_data_request(field="something_secret", permission=admin_check, quiet=False)
-def get_secret_data(*args, **loader_args):
-    print('get_secret_data', loader_args['params'])
-    return "Secret Data from server"
-
-
-@register_data_request(field=["private_value", "private_{private_id}"])
+@register_data_request(field="private_{private_id}")
 def get_private_value(*args, **loader_args):
     print('get_private_value', loader_args['params'])
     return f"Private Value:{3 * str(loader_args['params'].get('private_id'))}"

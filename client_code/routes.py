@@ -29,7 +29,9 @@ class PrivateIdRoute(AutoLoad):
     cache_data = False  # just for demo purposes
     
     global_fields = ["private_{private_id}"]
-    remap_fields = {"private_{private_id}": "private"}
+    remap_fields = {
+        "private_{private_id}": "private",
+    }
 
 
 class PrivateRoute(AutoLoad):
