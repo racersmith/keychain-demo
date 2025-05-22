@@ -14,7 +14,8 @@ class RootRoute(Route):
 class HomeRoute(AutoLoad):
     path = "/home"
     form = "Pages.Home"
-    fields = ["first_load", "the answer to everything"]
+    fields = ["first_load", "the answer to everything", "field without fn"]
+    strict = False
 
 
 class AccountRoute(AutoLoad):
