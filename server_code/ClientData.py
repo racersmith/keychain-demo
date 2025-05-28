@@ -1,6 +1,24 @@
+import anvil.server
 from routing_data.DataFinder import register_data_request, Flatten
 
 import time
+
+
+
+@anvil.server.background_task
+def task(*args, **kwargs):
+    time.sleep(60)
+    return 123
+
+
+def initialize():
+    task = anvil.server.session.get('task', None)
+    print(task)
+
+initialize()
+
+# anvil.server.session['task'] = anvil.server.session('task', None) or anvil.server.launch_background_task('task')
+
 
 
 def admin_check():
