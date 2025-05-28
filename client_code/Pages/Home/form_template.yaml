@@ -4,6 +4,12 @@ components_by_slot:
     name: heading_1
     properties: {text: Home}
     type: form:dep_lin1x4oec0ytd:_Components.Heading
+  - layout_properties: {}
+    name: rich_text_1
+    properties:
+      content: "This is a demonstration of `routing_data`.  This is a data handler that is designed to be used with the [`routing`](https://routing-docs.anvil.works/) dependency.\n\n`routing_data` provides a consistent method for defining what data is required in a specific routing path and then takes care of finding the fastest data to fill the requirements.  This is done by first looking to see if the data is available as part of the `loader_args[\"nav_context\"]`, then look in the client side cache, and finally, it requests the data from a matching server side function.  The server side functions are defined by simply adding a decorator as well as what fields the function will return.\n\nFor instance, here is the registration for account information.\n``` python\n@register_data_request(field=\"first_load\")\ndef get_first_load(*args, **loader_args):\n    return time.time()\n\n@register_data_request(field=[\"account\", \"name\", \"email\", \"phone\"])\ndef get_account_data(*args, **loader_args):\n    return Flatten(name=\"Arther\", email=\"arther@galaxyguides.com\", phone=\"987-654-3210\")\n```\n\nThe simple case is something like `get_first_load()`.  If the route requests `first_load` as a field, then the `router_context.data = {\"first_load\": 1234}` \n\nThe second case, `get_account_data()`  has multiple fields.  In this case, any of the fields listed will call this function.  The `Flatten` results in each of the values being added to the parent dict rather than being nested.  So, having `account` as a required field means you will get back the dict :\n```\n{\"name\": \"Arther\",\n\"something_private\": null,\n\"email\": \"arther@galaxyguides.com\",\n\"phone\": \"987-654-3210\"}\n```\nWithout using `Flatten` as the return you would get:\n```\n{\"account\": {\n    \"name\": \"Arther\",\n    \"something_private\": null,\n    \"email\": \"arther@galaxyguides.com\",\n    \"phone\": \"987-654-3210\",\n    }\n}\n```"
+      enable_slots: false
+    type: RichText
   - data_bindings: []
     layout_properties: {}
     name: form_data_display_1

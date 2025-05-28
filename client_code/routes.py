@@ -1,5 +1,5 @@
 from routing.router import Route, Redirect
-from routing_data.data_finder import AutoLoad, find_global_fields
+from routing_data.data_finder import AutoLoad, initialize_cache
 
 import time
 
@@ -28,7 +28,6 @@ class AccountRoute(AutoLoad):
 class PrivateIdRoute(AutoLoad):
     path = "/private/:private_id"
     form = "Pages.Private"
-    strict = False
     cache_data = False  # just for demo purposes
 
     global_fields = ["private_{private_id}"]
@@ -44,21 +43,17 @@ class PrivateRoute(AutoLoad):
     fields = ["name", "something_private"]
 
 
+class StrictRoute(AutoLoad):
+    path = "/strict"
+    form = "Pages.Strict"
+    strict = True
+    fields = ["field without fn"]  # This will raise a LookupError
+
+
 class ProtectedRoute(AutoLoad):
     path = "/protected"
     form = "Pages.Protected"
     fields = ["what is the question"]
-
-
-# class Option1Route(AutoLoad):
-#     path = "/option_1"
-#     form = "Pages.PageOptions.Option1"
-#     fields = ["first_load"]
-
-# class Option2Route(AutoLoad):
-#     path = "/option_2"
-#     form = "Pages.PageOptions.Option2"
-#     fields = ["name"]
 
 
 class OptionsRoute(AutoLoad):
@@ -76,9 +71,6 @@ class OptionsRoute(AutoLoad):
             self.form = "Pages.PageOptions.Option2"
             self.fields = ["first_load"]
 
-    # def load_form(self, _, routing_context):
-    #     navigate("/option_2", replace=True, form_properties=routing_context.form_properties)
 
-
-# This could be more tightly integrated so this is not needed here...
-find_global_fields()
+# This initializes
+initialize_cache()

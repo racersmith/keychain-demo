@@ -5,6 +5,14 @@ components_by_slot:
     properties: {text: Option 2}
     type: form:dep_lin1x4oec0ytd:_Components.Heading
   - layout_properties: {}
+    name: rich_text_1
+    properties:
+      content: |-
+        This page will load a different page every 5 seconds.  This is done from the `before_load` Route method.
+
+        The `before_load()` method sets the `.form` attribute as well as the `.fields` attribute.  I expect to use this in cases where a specific flow is required for user initialization.
+    type: RichText
+  - layout_properties: {}
     name: form_data_display_1
     properties: {}
     type: form:Pages.form_data_display
