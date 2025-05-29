@@ -24,6 +24,10 @@ components_by_slot:
     properties: {icon: 'mi:auto_awesome_motion', path: /option, text: Options}
     type: form:dep_capuawajr8465t:router.NavLink
   - layout_properties: {}
+    name: nav_link_7
+    properties: {icon: 'mi:timer', path: /polling, text: Polling}
+    type: form:dep_capuawajr8465t:router.NavLink
+  - layout_properties: {}
     name: nav_link_4
     properties: {icon: 'mi:lock', path: /protected, text: Protected}
     type: form:dep_capuawajr8465t:router.NavLink

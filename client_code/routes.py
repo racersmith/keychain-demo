@@ -50,6 +50,11 @@ class StrictRoute(AutoLoad):
     fields = ["field without fn"]  # This will raise a LookupError
 
 
+class PollingRoute(Route):
+    path = "/polling"
+    form = "Pages.Polling"
+
+
 class ProtectedRoute(AutoLoad):
     path = "/protected"
     form = "Pages.Protected"

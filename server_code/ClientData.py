@@ -11,16 +11,6 @@ def task(*args, **kwargs):
     return 123
 
 
-def initialize():
-    task = anvil.server.session.get('task', None)
-    print(task)
-
-initialize()
-
-# anvil.server.session['task'] = anvil.server.session('task', None) or anvil.server.launch_background_task('task')
-
-
-
 def admin_check():
     # just for demo's sake something to validate the user request
     return False
@@ -53,9 +43,9 @@ def get_account_data(*args, **loader_args):
     return Flatten(name="Arther", email="arther@galaxyguides.com", phone="987-654-3210")
 
 
-@register_data_request(field="first_load")
+@register_data_request(field=["first_load", "server_time"])
 def get_time(*args, **loader_args):
-    print('get_time', loader_args['params'])
+    print('get_time', loader_args.get('params', None))
     return time.time()
 
 
