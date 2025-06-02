@@ -58,7 +58,7 @@ class PollingRoute(Route):
 class ProtectedRoute(AutoLoad):
     path = "/protected"
     form = "Pages.Protected"
-    fields = ["what is the question"]
+    global_fields = ["what is the question"]
     permission_error_path = "/home"
 
 
