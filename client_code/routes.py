@@ -67,6 +67,7 @@ class OptionsRoute(AutoLoad):
     form = "Pages.PageOptions.Option1"
     fields = ["name", "first_load"]
     cache_data = False
+    cache_form = False
 
     def before_load(self, *args, **loader_args):
         """Change form and data required at time of navigation"""
