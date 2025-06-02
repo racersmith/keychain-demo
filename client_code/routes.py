@@ -59,6 +59,7 @@ class ProtectedRoute(AutoLoad):
     path = "/protected"
     form = "Pages.Protected"
     fields = ["what is the question"]
+    permission_error_path = "/home"
 
 
 class OptionsRoute(AutoLoad):
