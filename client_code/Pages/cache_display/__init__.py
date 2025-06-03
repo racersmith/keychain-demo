@@ -5,6 +5,7 @@ from routing_data.data_finder.cache import _DATA, _FIELDS, _GROUPS
 
 import json
 
+
 class cache_display(cache_displayTemplate):
     def __init__(self, **properties):
         self.init_components(**properties)
@@ -17,7 +18,7 @@ class cache_display(cache_displayTemplate):
 
         lines.append("==Global Keys==")
         lines.append("\n".join(_FIELDS))
-        
+
         lines.append("\n==Global Cache==")
         lines.append(json.dumps(_DATA, indent=4))
         self.text_1.text = "\n".join(lines)

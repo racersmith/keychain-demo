@@ -1,6 +1,7 @@
 from ._anvil_designer import PollingTemplate
 
-import anvil.server
+from routing_data.data_finder import fetch_from_server
+
 
 class Polling(PollingTemplate):
     def __init__(self, **properties):
@@ -8,5 +9,5 @@ class Polling(PollingTemplate):
 
     def timer_1_tick(self, **event_args):
         """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
-        data = anvil.server.call_s('_routing_auto_data_request', fields_requested=['server_time'])
+        data = fetch_from_server("server_time")
         self.text_1.text = data

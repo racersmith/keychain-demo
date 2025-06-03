@@ -4,7 +4,6 @@ from routing_data.DataFinder import register_data_request, Flatten
 import time
 
 
-
 @anvil.server.background_task
 def task(*args, **kwargs):
     time.sleep(60)
@@ -16,16 +15,20 @@ def admin_check():
     return False
 
 
-@register_data_request(field=[f"the answer to {x}" for x in ["everything", "life", "the universe"]])
+@register_data_request(
+    field=[f"the answer to {x}" for x in ["everything", "life", "the universe"]]
+)
 def get_the_answer(*args, **loader_args):
-    print('get_the_answer', loader_args['params'])
+    print("get_the_answer", loader_args["params"])
     return 42
 
 
-@register_data_request(field="what is the question", permission=admin_check, quiet=False)
+@register_data_request(
+    field="what is the question", permission=admin_check, quiet=False
+)
 def get_the_question(*args, **loader_args):
     # raise LookupError('The question remains unknown')
-    print('get_the_question', loader_args['params'])
+    print("get_the_question", loader_args["params"])
     raise LookupError("The question remains unknown.")
 
 
@@ -39,23 +42,23 @@ def get_account_data(*args, **loader_args):
         'account' -> {'name': name, 'email': email, 'phone': phone}
         'account.email' -> email
     """
-    print('get_account_data', loader_args['params'])
+    print("get_account_data", loader_args.get("params", None))
     return Flatten(name="Arther", email="arther@galaxyguides.com", phone="987-654-3210")
 
 
 @register_data_request(field=["first_load", "server_time"])
 def get_time(*args, **loader_args):
-    print('get_time', loader_args.get('params', None))
+    print("get_time", loader_args.get("params", None))
     return time.time()
 
 
 @register_data_request(field="something_private", permission=admin_check, quiet=True)
 def get_private_data(*args, **loader_args):
-    print('get_private_data', loader_args['params'])
+    print("get_private_data", loader_args["params"])
     return "Private Data from server"
 
 
 @register_data_request(field="private_{private_id}")
 def get_private_value(*args, **loader_args):
-    print('get_private_value', loader_args['params'])
+    print("get_private_value", loader_args["params"])
     return f"Private Value:{3 * str(loader_args['params'].get('private_id'))}"
