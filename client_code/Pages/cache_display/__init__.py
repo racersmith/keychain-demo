@@ -1,7 +1,7 @@
 from ._anvil_designer import cache_displayTemplate
 
 from routing.router import _cached
-from routing_data.data_finder.auto_load import _GLOBAL_CACHE, _GLOBAL_KEYS
+from routing_data.data_finder.cache import _DATA, _FIELDS, _GROUPS
 
 import json
 
@@ -16,8 +16,8 @@ class cache_display(cache_displayTemplate):
             lines.append(f"{key}:\n{json.dumps(value.data, indent=4)}\n")
 
         lines.append("==Global Keys==")
-        lines.append("\n".join(_GLOBAL_KEYS))
+        lines.append("\n".join(_FIELDS))
         
         lines.append("\n==Global Cache==")
-        lines.append(json.dumps(_GLOBAL_CACHE, indent=4))
+        lines.append(json.dumps(_DATA, indent=4))
         self.text_1.text = "\n".join(lines)
