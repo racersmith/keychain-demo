@@ -1,6 +1,6 @@
 from ._anvil_designer import PollingTemplate
 
-from routing_data.data_finder import fetch_from_server
+from keychain.data_finder import fetch_from_server
 
 
 class Polling(PollingTemplate):
