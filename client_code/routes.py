@@ -1,5 +1,5 @@
 from routing.router import Route, Redirect
-from keychain.data_finder import AutoLoad, initialize_cache
+from keychain.client import AutoLoad, initialize_cache
 
 import time
 
