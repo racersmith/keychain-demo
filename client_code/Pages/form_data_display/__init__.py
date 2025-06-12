@@ -5,17 +5,19 @@ import time
 
 class form_data_display(form_data_displayTemplate):
     def __init__(self, **properties):
+        self.route = None
         self.init_components(**properties)
 
 
     def form_show(self, **event_args):
         """This method is called when the form is shown on the page"""
 
-        fields = {
-            "fields": self.route.fields,
-            "local_fields": self.route.local_fields,
-            "global_fields": self.route.global_fields
-        }
+        keys = ["fields", "local_fields", "global_fields", "remap_fields"]
+        
+        fields = dict()
+        for key in keys:
+            fields[key] = getattr(self.route, key)
+            
         self.fields.content = "# Fields\n```\n" + str(json.dumps(fields, indent=2)) + "\n```"
         
         data = {

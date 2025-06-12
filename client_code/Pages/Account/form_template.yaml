@@ -4,10 +4,6 @@ components_by_slot:
     name: heading_1
     properties: {text: Account}
     type: form:dep_lin1x4oec0ytd:_Components.Heading
-  - layout_properties: {}
-    name: form_data_display_1
-    properties: {}
-    type: form:Pages.form_data_display
   - components: []
     layout_properties: {}
     name: rich_text_1
@@ -19,6 +15,10 @@ components_by_slot:
     name: nav_link_1
     properties: {path: /private, text: Private with context}
     type: form:dep_capuawajr8465t:router.NavLink
+  - layout_properties: {}
+    name: form_data_display_1
+    properties: {}
+    type: form:Pages.form_data_display
 is_package: true
 layout:
   form_event_bindings: {show: form_show}

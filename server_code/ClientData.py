@@ -1,11 +1,20 @@
+import anvil.server
 from keychain.server import register_data_request, Flatten
 
 import time
 
 
 def admin_check():
-    # just for demo's sake something to validate the user request
-    return False
+    print(anvil.server.session)
+    locked = anvil.server.session.get('admin', False)
+    print(f"Admin Check: {locked}")
+    return locked
+
+
+@anvil.server.callable
+def set_lock_state(admin: bool):
+    anvil.server.session['admin'] = bool(admin)
+    print(anvil.server.session)
 
 
 @register_data_request(field="the answer to life the universe and everything")
@@ -19,7 +28,8 @@ def get_the_answer(*args, **loader_args):
 )
 def get_the_question(*args, **loader_args):
     print("get_the_question", loader_args["params"])
-    raise LookupError("The question remains unknown.")
+    # raise LookupError("The question remains unknown.")
+    return "Starting Deep Thought...Result expected in 7.5 Million Years."
 
 
 @register_data_request(field=["account", "name", "email", "phone"])
@@ -51,4 +61,4 @@ def get_private_data(*args, **loader_args):
 @register_data_request(field="private_{private_id}")
 def get_private_value(*args, **loader_args):
     print("get_private_value", loader_args["params"])
-    return f"Private Value:{3 * str(loader_args['params'].get('private_id'))}"
+    return f"P{3 * str(loader_args['params'].get('private_id'))}V"

@@ -5,13 +5,19 @@ components_by_slot:
     properties: {text: Home}
     type: form:dep_lin1x4oec0ytd:_Components.Heading
   - layout_properties: {}
-    name: rich_text_1
+    name: rich_text_2
     properties:
       content: |-
         Demo for [Keychain](https://github.com/racersmith/keychain)
 
         The panel to the right shows the state of Keychain and Routing cache.
         The panel below shows the page data with the boilerplate:
+    type: RichText
+  - layout_properties: {}
+    name: rich_text_1
+    properties:
+      background: '#e0e0e0'
+      content: |-
         ``` python
         from ._anvil_designer import HomeTemplate
         from routing import router

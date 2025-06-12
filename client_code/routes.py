@@ -1,7 +1,7 @@
 from routing.router import Route, Redirect
 from keychain.client import AutoLoad, initialize_cache
 
-import time
+ADMIN = False
 
 
 class RootRoute(Route):
@@ -61,6 +61,7 @@ class ProtectedRoute(AutoLoad):
     form = "Pages.Protected"
     global_fields = ["what is the question"]
     permission_error_path = "/home"
+    cache_data = False
 
 
 class OptionsRoute(AutoLoad):
@@ -72,7 +73,7 @@ class OptionsRoute(AutoLoad):
 
     def before_load(self, *args, **loader_args):
         """Change form and data required at time of navigation"""
-        if time.time() % 10 < 5:
+        if ADMIN:
             self.form = "Pages.PageOptions.Option1"
             self.fields = ["name"]
         else:

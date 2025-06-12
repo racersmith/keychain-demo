@@ -27,6 +27,11 @@ components_by_slot:
     name: nav_link_7
     properties: {icon: 'mi:timer', path: /polling, text: Polling}
     type: form:dep_capuawajr8465t:router.NavLink
+  - event_bindings: {change: lock_switch_change}
+    layout_properties: {}
+    name: lock_switch
+    properties: {align: center, selected_icon: 'mi:lock_open', unselected_icon: 'mi:lock'}
+    type: form:dep_lin1x4oec0ytd:_Components.Switch
   - layout_properties: {}
     name: nav_link_4
     properties: {icon: 'mi:lock', path: /protected, text: Protected}
