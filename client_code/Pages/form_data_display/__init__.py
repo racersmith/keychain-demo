@@ -6,6 +6,7 @@ import time
 class form_data_display(form_data_displayTemplate):
     def __init__(self, **properties):
         self.route = None
+        
         self.init_components(**properties)
 
 
@@ -16,7 +17,7 @@ class form_data_display(form_data_displayTemplate):
         
         fields = dict()
         for key in keys:
-            fields[key] = getattr(self.route, key)
+            fields[key] = getattr(self.route, key, None)
             
         self.fields.content = "# Fields\n```\n" + str(json.dumps(fields, indent=2)) + "\n```"
         
