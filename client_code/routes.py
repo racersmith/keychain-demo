@@ -14,7 +14,7 @@ class RootRoute(Route):
 class HomeRoute(AutoLoad):
     path = "/home"
     form = "Pages.Home"
-    fields = ["first_load", "the answer to everything", "field without fn"]
+    fields = ["first_load", "the answer to life the universe and everything", "field_without_fn"]
     strict = False
 
 
@@ -22,13 +22,13 @@ class AccountRoute(AutoLoad):
     path = "/account"
     form = "Pages.Account"
     strict = False
-    fields = ["first_load", "the answer to life", "name", "email"]
+    fields = ["first_load", "the answer to life the universe and everything", "name", "email"]
 
 
 class PrivateIdRoute(AutoLoad):
     path = "/private/:private_id"
     form = "Pages.Private"
-    cache_data = False  # just for demo purposes
+    cache_data = False
 
     global_fields = ["private_{private_id}"]
     remap_fields = {
@@ -40,14 +40,15 @@ class PrivateRoute(AutoLoad):
     path = "/private"
     form = "Pages.Private"
     strict = False
-    fields = ["name", "something_private"]
+    cache_data = False
+    fields = ["name", "something_private", "field_without_fn"]
 
 
 class StrictRoute(AutoLoad):
     path = "/strict"
     form = "Pages.Strict"
     strict = True
-    fields = ["field without fn"]  # This will raise a LookupError
+    fields = ["field_without_fn"]  # This will raise a LookupError
 
 
 class PollingRoute(Route):

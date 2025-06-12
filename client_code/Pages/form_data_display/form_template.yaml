@@ -1,8 +1,21 @@
 components:
-- layout_properties: {grid_position: 'EIZFRG,FMMRVU'}
-  name: text_1
-  properties: {}
-  type: form:dep_lin1x4oec0ytd:_Components.Text
+- layout_properties: {grid_position: 'EYJDDR,MMDLPC'}
+  name: fields
+  properties:
+    background: theme:Secondary Container
+    enable_slots: false
+    spacing:
+      padding: [null, '12', null, '12']
+  type: RichText
+- layout_properties: {grid_position: 'XOKJRY,NGDFBP'}
+  name: data
+  properties:
+    background: theme:Primary Container
+    content: ''
+    enable_slots: false
+    spacing:
+      padding: [null, '12', null, '12']
+  type: RichText
 container:
   event_bindings: {show: form_show}
   type: ColumnPanel

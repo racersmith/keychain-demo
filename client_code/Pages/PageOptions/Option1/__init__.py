@@ -10,4 +10,5 @@ class Option1(Option1Template):
         print(self.item)
 
         self.form_data_display_1.item = self.item
+        self.form_data_display_1.route = routing_context.route
         self.layout.raise_event('x-refresh')

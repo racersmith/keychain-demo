@@ -1,13 +1,6 @@
-import anvil.server
 from keychain.server import register_data_request, Flatten
 
 import time
-
-
-@anvil.server.background_task
-def task(*args, **kwargs):
-    time.sleep(60)
-    return 123
 
 
 def admin_check():
@@ -15,9 +8,7 @@ def admin_check():
     return False
 
 
-@register_data_request(
-    field=[f"the answer to {x}" for x in ["everything", "life", "the universe"]]
-)
+@register_data_request(field="the answer to life the universe and everything")
 def get_the_answer(*args, **loader_args):
     print("get_the_answer", loader_args["params"])
     return 42
@@ -27,7 +18,6 @@ def get_the_answer(*args, **loader_args):
     field="what is the question", permission=admin_check, quiet=False
 )
 def get_the_question(*args, **loader_args):
-    # raise LookupError('The question remains unknown')
     print("get_the_question", loader_args["params"])
     raise LookupError("The question remains unknown.")
 

@@ -10,6 +10,8 @@ class Home(HomeTemplate):
         print(self.item)
 
         self.form_data_display_1.item = self.item
+        self.form_data_display_1.route = routing_context.route
+        
         self.layout.raise_event('x-refresh')
 
     def form_show(self, **event_args):
