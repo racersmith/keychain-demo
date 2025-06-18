@@ -2,6 +2,7 @@ from ._anvil_designer import cache_displayTemplate
 
 from routing.router import _cached
 from keychain.client.cache import _DATA, _FIELDS, _GROUPS
+from keychain.client import invalidate
 
 import json
 
@@ -41,4 +42,9 @@ class cache_display(cache_displayTemplate):
         """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
         self.refresh()
 
-        
+    def invalidate_button_click(self, **event_args):
+        """This method is called when the component is clicked."""
+        field_or_keys = self.field_or_keys_box.text or None
+        path = self.path_box.text or None
+        auto = self.checkbox_1.checked
+        invalidate(field_or_keys, path=path, auto_invalidate_paths=auto)

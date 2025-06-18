@@ -1,4 +1,31 @@
 components:
+- components:
+  - components:
+    - layout_properties: {slot: card-content-container-slot}
+      name: field_or_keys_box
+      properties: {label: field_or_key}
+      type: form:dep_lin1x4oec0ytd:_Components.TextInput.TextBox
+    - layout_properties: {slot: card-content-container-slot}
+      name: path_box
+      properties: {label: path}
+      type: form:dep_lin1x4oec0ytd:_Components.TextInput.TextBox
+    - layout_properties: {slot: card-content-container-slot}
+      name: checkbox_1
+      properties: {checked: true, text: auto_invalidate_paths}
+      type: form:dep_lin1x4oec0ytd:_Components.Checkbox
+    - event_bindings: {click: invalidate_button_click}
+      layout_properties: {slot: card-content-container-slot}
+      name: invalidate_button
+      properties: {text: Invalidate}
+      type: form:dep_lin1x4oec0ytd:_Components.Button
+    layout_properties: {slot: card-content-slot}
+    name: card_content_container_1
+    properties: {}
+    type: form:dep_lin1x4oec0ytd:_Components.Card.CardContentContainer
+  layout_properties: {grid_position: 'VDNYVF,DDCMMQ'}
+  name: card_1
+  properties: {}
+  type: form:dep_lin1x4oec0ytd:_Components.Card
 - layout_properties: {grid_position: 'ORDLCQ,BLARWN'}
   name: text
   properties: {enable_slots: false}
