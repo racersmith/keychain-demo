@@ -10,7 +10,7 @@ dependencies:
   version: {version_tag: v0.3.5}
 - dep_id: dep_qmfpo8g8ozffw
   resolution_hints: {app_id: UESVUJKDGQULTT5M, name: routing data, package_name: routing_data}
-  version: {branch: develop}
+  version: {version_tag: v1.1}
 metadata: {description: Demo of Keychain, title: Keychain Demo}
 name: Keychain Demo
 native_deps: null
