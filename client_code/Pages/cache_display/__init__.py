@@ -37,4 +37,8 @@ class cache_display(cache_displayTemplate):
         
         self.text.content = "\n".join(lines)
 
+    def timer_tick(self, **event_args):
+        """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
+        self.refresh()
+
         
