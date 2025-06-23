@@ -1,0 +1,15 @@
+components_by_slot:
+  content:
+  - layout_properties: {}
+    name: rich_text_1
+    properties:
+      content: |-
+        # Redirected
+        This page was redirected to from the server.  The server redirect includes data from the server.
+    type: RichText
+  - layout_properties: {}
+    name: form_data_display_1
+    properties: {}
+    type: form:Pages.form_data_display
+is_package: true
+layout: {type: 'form:Layouts.Layout'}

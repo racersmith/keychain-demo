@@ -68,4 +68,4 @@ def get_private_value(*args, **loader_args):
 
 @register_data_request(field="server_redirect_field")
 def trigger_server_redirect(*args, **loader_args):
-    pass
+    raise router.Redirect(path='/')

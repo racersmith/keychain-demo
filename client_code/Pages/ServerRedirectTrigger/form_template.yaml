@@ -1,0 +1,15 @@
+components_by_slot:
+  content:
+  - layout_properties: {}
+    name: rich_text_1
+    properties:
+      content: |-
+        # Server Redirect
+        When the data field on this page is requested from the server, the server will request a redirect.
+    type: RichText
+  - layout_properties: {}
+    name: form_data_display_1
+    properties: {}
+    type: form:Pages.form_data_display
+is_package: true
+layout: {type: 'form:Layouts.Layout'}
