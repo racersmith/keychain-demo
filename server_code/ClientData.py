@@ -1,8 +1,9 @@
 import anvil.server
 from keychain.server import register_data_request, Flatten
-from routing import router
+from keychain.client import Redirect
 
 import time
+
 
 
 def admin_check():
@@ -66,6 +67,18 @@ def get_private_value(*args, **loader_args):
     return f"P{3 * str(loader_args['params'].get('private_id'))}V"
 
 
+def get_redirect_data():
+    print("get_redirect_data")
+    return {"redirect_data": 987654321}
+
+
 @register_data_request(field="server_redirect_field")
 def trigger_server_redirect(*args, **loader_args):
-    raise router.Redirect(path='/')
+    print("rasing Redirect on server")
+    # raise ValueError()
+    raise Redirect(path='/redirected')
+    
+    # return 1234
+    
+    # raise router.Redirect(path='/redirected', nav_context=get_redirect_data())
+    

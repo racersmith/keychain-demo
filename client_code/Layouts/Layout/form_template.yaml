@@ -27,6 +27,10 @@ components_by_slot:
     name: nav_link_7
     properties: {icon: 'mi:timer', path: /polling, text: Polling}
     type: form:dep_capuawajr8465t:router.NavLink
+  - layout_properties: {}
+    name: nav_link_8
+    properties: {icon: 'mi:directions', path: /redirect, text: Redirect}
+    type: form:dep_capuawajr8465t:router.NavLink
   - event_bindings: {change: lock_switch_change}
     layout_properties: {}
     name: lock_switch
