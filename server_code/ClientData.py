@@ -76,9 +76,5 @@ def get_redirect_data():
 def trigger_server_redirect(*args, **loader_args):
     print("rasing Redirect on server")
     # raise ValueError()
-    raise ServerRedirect()
-    
-    # return 1234
-    
-    # raise router.Redirect(path='/redirected', nav_context=get_redirect_data())
+    raise ServerRedirect(path='/redirected', data=get_redirect_data())
     
