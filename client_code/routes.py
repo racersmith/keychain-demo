@@ -81,5 +81,11 @@ class OptionsRoute(AutoLoad):
             self.fields = ["first_load"]
 
 
+class ServerRedirectRoute(AutoLoad):
+    path = "/redirect"
+    form = "Pages.ServerRedirect"
+    fields = ["server_redirect_field"]
+
+
 # This initializes
 initialize_cache()

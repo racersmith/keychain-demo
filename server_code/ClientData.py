@@ -1,5 +1,6 @@
 import anvil.server
 from keychain.server import register_data_request, Flatten
+from routing import router
 
 import time
 
@@ -63,3 +64,8 @@ def get_private_data(*args, **loader_args):
 def get_private_value(*args, **loader_args):
     print("get_private_value", loader_args["params"])
     return f"P{3 * str(loader_args['params'].get('private_id'))}V"
+
+
+@register_data_request(field="server_redirect_field")
+def trigger_server_redirect(*args, **loader_args):
+    pass
