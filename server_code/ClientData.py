@@ -13,6 +13,7 @@ def admin_check():
 
 @anvil.server.callable
 def set_lock_state(admin: bool):
+    """ Just a mock admin account flag. """
     anvil.server.session['admin'] = bool(admin)
     print(anvil.server.session)
 
