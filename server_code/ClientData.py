@@ -1,6 +1,6 @@
 import anvil.server
 from keychain.server import register_data_request, Flatten
-from keychain.client import Redirect
+from keychain.client.errors import ServerRedirect
 
 import time
 
@@ -76,7 +76,7 @@ def get_redirect_data():
 def trigger_server_redirect(*args, **loader_args):
     print("rasing Redirect on server")
     # raise ValueError()
-    raise Redirect(path='/redirected')
+    raise ServerRedirect()
     
     # return 1234
     
