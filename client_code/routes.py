@@ -1,5 +1,5 @@
 from routing.router import Route, Redirect
-from keychain.client import AutoLoad, initialize_cache
+from keychain.client import AutoLoad
 
 ADMIN = False
 
@@ -79,7 +79,3 @@ class OptionsRoute(AutoLoad):
         else:
             self.form = "Pages.PageOptions.Option2"
             self.fields = ["first_load"]
-
-
-# This initializes
-initialize_cache()
