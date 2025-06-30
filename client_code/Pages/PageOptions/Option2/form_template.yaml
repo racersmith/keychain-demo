@@ -8,7 +8,7 @@ components_by_slot:
     name: rich_text_1
     properties:
       content: |-
-        This page will load a different page every 5 seconds.  This is done from the `before_load` Route method.
+        This page is loaded based on the locked switch.  This is done from the `before_load` Route method.
 
         The `before_load()` method sets the `.form` attribute as well as the `.fields` attribute.  I expect to use this in cases where a specific flow is required for user initialization.
     type: RichText
