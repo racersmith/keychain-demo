@@ -6,9 +6,9 @@ import time
 
 def admin_check():
     print(anvil.server.session)
-    locked = anvil.server.session.get('admin', False)
-    print(f"Admin Check: {locked}")
-    return locked
+    is_admin = anvil.server.session.get('admin', False)
+    print(f"Admin Check: {is_admin}")
+    return is_admin
 
 
 @anvil.server.callable
