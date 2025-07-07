@@ -1,6 +1,7 @@
 from routing.router import Route, Redirect
 from keychain.client import AutoLoad
 
+
 ADMIN = False
 
 
@@ -14,7 +15,11 @@ class RootRoute(Route):
 class HomeRoute(AutoLoad):
     path = "/home"
     form = "Pages.Home"
-    fields = ["first_load", "the answer to life the universe and everything", "field_without_fn"]
+    fields = [
+        "first_load",
+        "the answer to life the universe and everything",
+        "field_without_fn",
+    ]
     strict = False
 
 
@@ -22,7 +27,12 @@ class AccountRoute(AutoLoad):
     path = "/account"
     form = "Pages.Account"
     strict = False
-    fields = ["first_load", "the answer to life the universe and everything", "name", "email"]
+    fields = [
+        "first_load",
+        "the answer to life the universe and everything",
+        "name",
+        "email",
+    ]
 
 
 class PrivateIdRoute(AutoLoad):
